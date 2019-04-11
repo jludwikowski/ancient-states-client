@@ -7,7 +7,7 @@ type Props = {
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const BuildingCard: React.FunctionComponent<Props> = props => (
-    <div {...props}>
+    <div>
         <img src={props.building.imageUrl} />
         <div>{props.building.name}</div>
         <div>{props.building.level}</div>
