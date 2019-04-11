@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {CityView} from "./CityInterface/view/CityView";
+import {ArmiesView} from "./ArmiesInterface/view/ArmiesView";
+import {LeadersView} from "./LeadersInterface/view/LeadersView";
+import {Navbar} from "./BasicInterface/components/Navbar";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <>
+          <Navbar/>
+          <div className="App">
+            <div>
+              <CityView />
+            </div>
+            <div>
+              <ArmiesView />
+            </div>
+            <div>
+               <LeadersView />
+            </div>
+          </div>
+        </>
     );
   }
 }
