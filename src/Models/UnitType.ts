@@ -1,1 +1,1 @@
-export type UnitType = "Range" | "Cavalry" | "Melee" | "Support";
+export type UnitType = 'Range' | 'Cavalry' | 'Melee' | 'Support';

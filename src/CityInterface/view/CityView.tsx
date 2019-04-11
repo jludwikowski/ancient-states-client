@@ -1,21 +1,21 @@
-import React from "react"
-import { BuildingBrowser } from "../components/BuildingBrowser";
-import Building from "../../Models/Building";
-import { defaultBuildingList } from "../../BackEndMock/buildings"
+import React from 'react'
+import { defaultBuildingList } from '../../BackEndMock/buildings'
+import Building from '../../Models/Building';
+import { BuildingBrowser } from '../components/BuildingBrowser';
 
 export class CityView extends React.Component {
 
-    buildingList: Building[] = defaultBuildingList;
+    public buildingList: Building[] = defaultBuildingList;
 
-    componentDidMount(): void {
-
+    public componentDidMount(): void {
+        console.log('On componentDidMount');
     };
 
-    onBuild(id:number) {
-
+    public onBuild(id:number) {
+        console.log('On Build');
     };
 
-    render() {
+    public render() {
         return(
             <>
                 <BuildingBrowser buildingList={this.buildingList} onBuild={this.onBuild} />

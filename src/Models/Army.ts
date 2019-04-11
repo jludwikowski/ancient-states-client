@@ -1,9 +1,8 @@
-import {Entity} from "./Entity";
-import Leade from "./Leader";
-import Unit from "./Unit";
+import {Entity} from './Entity';
+import Leader from './Leader';
 
 export default interface Army extends Entity {
-    commander: Leade | null,
+    commander: Leader | null,
     units: [{
         unitId: number,
         number: number

@@ -1,5 +1,5 @@
-import {Entity} from "./Entity";
-import Building from "./Building";
+import Building from './Building';
+import {Entity} from './Entity';
 
 export default interface City extends Entity {
     buildings: Building[],

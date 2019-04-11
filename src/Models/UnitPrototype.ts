@@ -1,5 +1,5 @@
-import {Entity} from "./Entity";
-import {UnitType} from "./UnitType";
+import {Entity} from './Entity';
+import {UnitType} from './UnitType';
 
 export default interface Unit extends Entity {
     trainTime: number,

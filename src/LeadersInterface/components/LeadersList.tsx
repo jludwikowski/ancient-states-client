@@ -1,14 +1,14 @@
-import React from "react";
-import {LeaderCard} from "./LeaderCard";
-import Leader from "../../Models/Leader";
+import React from 'react';
+import Leader from '../../Models/Leader';
+import {LeaderCard} from './LeaderCard';
 
-type Props = {
+interface Props {
     leadersList: Leader[],
-    onDismiss(id: number): void;
+    onDismiss(id: number): void
 };
 
 export const LeadersList: React.FunctionComponent<Props> = ({leadersList, onDismiss}) => (
-    <div className="card-group">
+    <div className='card-group'>
         {leadersList && leadersList.length !== 0 ? leadersList.map((leader, index) => (
             <React.Fragment key={leader.id}>
                 <LeaderCard leader={leader} onDismiss={onDismiss}/>

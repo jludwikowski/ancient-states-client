@@ -1,14 +1,14 @@
-import React from "react";
-import Building from "../../Models/Building";
-import { BuildingCard } from "../components/BuildingCard";
+import React from 'react';
+import Building from '../../Models/Building';
+import { BuildingCard } from '../components/BuildingCard';
 
-type Props = {
+interface Props {
     buildingList: Building[],
     onBuild(id: number): void;
 };
 
 export const BuildingBrowser: React.FunctionComponent<Props> = ({buildingList, onBuild}) => (
-    <div className="card-group">
+    <div className='card-group'>
         {buildingList.map((building, index) => (
             <React.Fragment key={building.id}>
                 <BuildingCard building={building} onBuild={onBuild}/>

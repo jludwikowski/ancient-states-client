@@ -1,4 +1,4 @@
-import Resource from "./Resource";
+import Resource from './Resource';
 
 export default interface Resources {
     [key:string]: any;

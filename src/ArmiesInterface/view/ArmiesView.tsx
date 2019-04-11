@@ -1,25 +1,25 @@
-import React from "react";
-import {ArmyTable} from "../components/ArmiesTable";
-import {defaultArmies} from "../../BackEndMock/armies";
-import Army from "../../Models/Army";
+import React from 'react';
+import {defaultArmies} from '../../BackEndMock/armies';
+import Army from '../../Models/Army';
+import {ArmyTable} from '../components/ArmiesTable';
 
 export class ArmiesView extends React.Component {
 
-    armiesList: Army[] = defaultArmies;
+    public armiesList: Army[] = defaultArmies;
 
-    componentDidMount(): void {
-
+    public componentDidMount(): void {
+        console.log("On componentDidMount");
     };
 
-    onDisband(id:number) {
-
+    public onDisband(id:number) {
+        console.log("On onDisband");
     };
 
-    onCreate() {
-
+    public onCreate() {
+        console.log("On onCreate");
     };
 
-    render () {
+    public render () {
         return (
             <>
                 <ArmyTable armiesList={this.armiesList} onCreate={this.onCreate} onDisband={this.onDisband}/>

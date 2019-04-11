@@ -1,5 +1,5 @@
-import Army from "../../Models/Army";
-import React from "react";
+import React from 'react';
+import Army from '../../Models/Army';
 
 type Props = {
     army: Army,
@@ -14,7 +14,7 @@ export const ArmyCard: React.FunctionComponent<Props> = props => (
                 <div>{unit.number}</div>
             </React.Fragment>
         ))}
-        <button className="btn btn-outline-secondary" onClick={() => props.onDisband(props.army.id)}>
+        <button className='btn btn-outline-secondary' onClick={() => props.onDisband(props.army.id)}>
             Disband this army
         </button>
     </div>

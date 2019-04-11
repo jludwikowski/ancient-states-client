@@ -1,9 +1,8 @@
-import React from "react";
-import Building from "../../Models/Building";
-import Leade from "../../Models/Leader";
+import React from 'react';
+import Leader from '../../Models/Leader';
 
 type Props = {
-    leader: Leade,
+    leader: Leader,
     onDismiss(id: number): void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
@@ -15,7 +14,7 @@ export const LeaderCard: React.FunctionComponent<Props> = props => (
         <div>{props.leader.leadership}</div>
         <div>{props.leader.wisdom}</div>
         <div>{props.leader.willpower}</div>
-        <button className="btn btn-outline-secondary" onClick={() => props.onDismiss(props.leader.id)}>
+        <button className='btn btn-outline-secondary' onClick={() => props.onDismiss(props.leader.id)}>
             Dismiss This Leader
         </button>
     </div>

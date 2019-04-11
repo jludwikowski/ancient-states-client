@@ -1,20 +1,20 @@
-import React from "react"
-import {LeadersList} from "../components/LeadersList";
-import Leader from "../../Models/Leader";
+import React from 'react'
+import Leader from '../../Models/Leader';
+import {LeadersList} from '../components/LeadersList';
 
 export class LeadersView extends React.Component {
 
-    leadersList: Leader[] = [];
+    public leadersList: Leader[] = [];
 
-    componentDidMount(): void {
-
+    public componentDidMount(): void {
+        console.log('On componentDidMount');
     };
 
-    onDismiss(id:number) {
-
+    public onDismiss(id:number) {
+        console.log('On onDismiss');
     };
 
-    render() {
+    public render() {
         return(
             <>
                 <LeadersList leadersList={this.leadersList} onDismiss={this.onDismiss} />
