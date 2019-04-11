@@ -2,7 +2,7 @@ import React from 'react';
 import Resources from '../../Models/Resources';
 
 export const StatusPane: React.FunctionComponent<Resources> = (props) => (
-     <div className='sidebar-sticky'>
+     <div className='sidebar-sticky navbar-dark'>
          <ul className='flex-column'>
              { Object.keys(props).map((key:any, index) => {
                      return (

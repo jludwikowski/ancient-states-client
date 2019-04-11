@@ -7,12 +7,14 @@ type Props = {
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const BuildingCard: React.FunctionComponent<Props> = props => (
-    <div>
-        <img src={props.building.imageUrl} />
-        <div>{props.building.name}</div>
-        <div>{props.building.level}</div>
-        <div>{props.building.cost}</div>
-        <div>{props.building.buildingTime}</div>
+    <div className="card">
+        <img className="card-img-top" src={props.building.imageUrl} />
+        <div className="card-body">
+            <h5 className="card-title">Name: {props.building.name}</h5>
+            <div>Level: {props.building.level}</div>
+            <div>Cost: {props.building.cost}</div>
+            <div>Building time: {props.building.buildingTime}</div>
+        </div>
         <button className='btn btn-outline-secondary' onClick={() => props.onBuild(props.building.id)}>
             Build level {props.building.level+1}
         </button>

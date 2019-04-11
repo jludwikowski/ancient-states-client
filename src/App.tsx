@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from 'react-router';
 import './App.css';
 import {ArmiesView} from './ArmiesInterface/view/ArmiesView';
 import {Navbar} from './BasicInterface/components/Navbar';
+import {Page404} from "./BasicInterface/components/Page404";
 import {StatusPane} from './BasicInterface/components/StatusPane';
 import {CityView} from './CityInterface/view/CityView';
 import {LeadersView} from './LeadersInterface/view/LeadersView';
@@ -25,21 +26,25 @@ class App extends React.Component {
 
     public render() {
         return (
-            <>
+            <div className='flex-container'>
                 <Navbar />
-                <StatusPane {...this.state.resources} />
-                <div className='App container'>
-                    <Switch>
-                        <Redirect path='/' exact={true} to='/cityView' />
+                <div className="row">
+                    <div className="side-bar">
+                        <StatusPane {...this.state.resources} />
+                    </div>
+                    <div className="col-12 main">
+                        <Switch>
+                            <Redirect path='/' exact={true} to='/cityView' />
 
-                        <Route path='/cityView' exact={true} component={CityView} />
-                        <Route path='/armiesView' component={ArmiesView} />
-                        <Route path='/leadersView' component={LeadersView} />
+                            <Route path='/cityView' exact={true} component={CityView} />
+                            <Route path='/armiesView' component={ArmiesView} />
+                            <Route path='/leadersView' component={LeadersView} />
 
-                        <Route path='*' render={() => <p>404 page not found! ;-( </p>} />
-                    </Switch>
+                            <Route path='*' component={Page404} />
+                        </Switch>
+                    </div>
                 </div>
-            </>
+            </div>
         );
     }
 }

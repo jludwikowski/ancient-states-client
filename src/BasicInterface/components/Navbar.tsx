@@ -5,7 +5,7 @@ export const Navbar: React.FunctionComponent = (props) => (
     <nav className='navbar navbar-expand navbar-dark bg-dark mb-3'>
         <div className='container'>
             <NavLink className='navbar-brand' to='/'>
-                Music App
+                Ancient States
             </NavLink>
 
             <div className='collapse navbar-collapse' id='navbarNav'>

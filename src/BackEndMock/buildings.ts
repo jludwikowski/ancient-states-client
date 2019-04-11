@@ -33,5 +33,16 @@ export const defaultBuildingList:Building[] = [
         description: 'This building produce food',
         finalCost: 80,
         finalBuildingTime: 150
+    },
+    {
+        id:4,
+        name: 'wall',
+        cost: 100,
+        buildingTime: 150,
+        level: 0,
+        imageUrl: '',
+        description: 'Increase your defences',
+        finalCost: 100,
+        finalBuildingTime: 150
     }
 ]

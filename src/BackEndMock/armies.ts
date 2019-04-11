@@ -7,8 +7,12 @@ export const defaultArmies:Army[] = [
         description: 'These men defend your lands',
         commander: null,
         units: [{
-            unitId: 1,
-            number: 5
-        }]
+                unitId: 1,
+                number: 5
+            }, {
+                unitId: 2,
+                number: 10
+            }
+        ]
     }
 ]
