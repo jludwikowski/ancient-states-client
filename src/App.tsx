@@ -16,12 +16,12 @@ class App extends React.Component {
 
     public state:State = {
         resources: {
-            food: {label: 'Food', value: 0},
-            iron: {label: 'Iron', value: 0},
-            timber: {label: 'Timber', value: 0},
-            stone: {label: 'Stone', value: 0},
-            gold: {label: 'Gold', value: 0},
-            influence: {label: 'Influence', value: 0}
+            food: {label: 'Food', value: 0, imageUrl: 'images/icons/icons8-wheat-30.png'},
+            iron: {label: 'Iron', value: 0, imageUrl: 'images/icons/icons8-steel-bars-48.png'},
+            timber: {label: 'Timber', value: 0, imageUrl: 'images/icons/icons8-wood-64.png'},
+            stone: {label: 'Stone', value: 0, imageUrl: 'images/icons/icons8-rock-30.png'},
+            gold: {label: 'Gold', value: 0, imageUrl: 'images/icons/icons8-coins-30.png'},
+            influence: {label: 'Influence', value: 0, imageUrl: 'images/icons/icons8-museum-30.png'}
         }
     };
 

@@ -2,8 +2,17 @@
 .side-bar {
     width: 180px;
     position: fixed;
+    padding-left: 25px;
 }
 .main {
     padding-left: 200px;
     padding-right: 30px;
 }
+.icon {
+    width: 25px;
+    height: 25px;
+}
+.item {
+    padding: 0.1rem
+}
+

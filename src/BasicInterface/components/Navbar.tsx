@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 export const Navbar: React.FunctionComponent = (props) => (
     <nav className='navbar navbar-expand navbar-dark bg-dark mb-3'>
-        <div className='container'>
-            <NavLink className='navbar-brand' to='/'>
-                Ancient States
-            </NavLink>
 
+        <NavLink className='navbar-brand' to='/'>
+            Ancient States
+        </NavLink>
+        <div className='container'>
             <div className='collapse navbar-collapse' id='navbarNav'>
                 <ul className='navbar-nav'>
                     <li className='nav-item'>

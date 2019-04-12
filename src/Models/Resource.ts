@@ -1,4 +1,5 @@
 export default interface Resource {
     label: string,
-    value: number
+    value: number,
+    imageUrl: string
 }
