@@ -1,10 +1,10 @@
 import React from 'react';
 import Army from '../../Models/Army';
 
-type Props = {
+interface Props {
     army: Army,
     onDisband(id: number): void
-} & React.HTMLAttributes<HTMLDivElement>;
+}
 
 export const ArmyCard: React.FunctionComponent<Props> = props => (
     <li className="list-group-item">

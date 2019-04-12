@@ -25,6 +25,11 @@ export const Navbar: React.FunctionComponent = (props) => (
                             Leader View
                         </NavLink>
                     </li>
+                    <li className='nav-item'>
+                        <NavLink className='nav-link' to='/battleReports'>
+                            Battle Reports
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </div>

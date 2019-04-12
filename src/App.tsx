@@ -5,6 +5,7 @@ import {ArmiesView} from './ArmiesInterface/view/ArmiesView';
 import {Navbar} from './BasicInterface/components/Navbar';
 import {Page404} from "./BasicInterface/components/Page404";
 import {StatusPane} from './BasicInterface/components/StatusPane';
+import {BattleReportsView} from "./BattleReportInterface/view/BattleReportsView";
 import {CityView} from './CityInterface/view/CityView';
 import {LeadersView} from './LeadersInterface/view/LeadersView';
 import Resources from './Models/Resources';
@@ -37,8 +38,9 @@ class App extends React.Component {
                             <Redirect path='/' exact={true} to='/cityView' />
 
                             <Route path='/cityView' exact={true} component={CityView} />
-                            <Route path='/armiesView' component={ArmiesView} />
-                            <Route path='/leadersView' component={LeadersView} />
+                            <Route path='/armiesView' exact={true} component={ArmiesView} />
+                            <Route path='/leadersView' exact={true} component={LeadersView} />
+                            <Route path='/battleReports' exact={true} component={BattleReportsView} />
 
                             <Route path='*' component={Page404} />
                         </Switch>
