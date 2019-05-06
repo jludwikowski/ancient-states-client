@@ -11,6 +11,7 @@
 .icon {
     width: 25px;
     height: 25px;
+    padding-right: 5px;
 }
 .item {
     padding: 0.1rem

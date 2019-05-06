@@ -8,22 +8,46 @@ import {StatusPane} from './BasicInterface/components/StatusPane';
 import {BattleReportsView} from "./BattleReportInterface/view/BattleReportsView";
 import {CityView} from './CityInterface/view/CityView';
 import {LeadersView} from './LeadersInterface/view/LeadersView';
-import Resources from './Models/Resources';
+import Player from './Models/Player';
+import ServerDataProvider from './Services/ServerDataProvider';
 
-interface State { resources: Resources };
+interface State { player: Player };
 
 class App extends React.Component {
 
     public state:State = {
-        resources: {
-            food: {label: 'Food', value: 0, imageUrl: 'images/icons/icons8-wheat-30.png'},
-            iron: {label: 'Iron', value: 0, imageUrl: 'images/icons/icons8-steel-bars-48.png'},
-            timber: {label: 'Timber', value: 0, imageUrl: 'images/icons/icons8-wood-64.png'},
-            stone: {label: 'Stone', value: 0, imageUrl: 'images/icons/icons8-rock-30.png'},
-            gold: {label: 'Gold', value: 0, imageUrl: 'images/icons/icons8-coins-30.png'},
-            influence: {label: 'Influence', value: 0, imageUrl: 'images/icons/icons8-museum-30.png'}
+        player: {
+            id: 0,
+            email: 'none',
+            armies: [],
+            name: '',
+            description: '',
+            city: {
+                id: 0,
+                name: 'Capital',
+                description: '',
+                numberOfMen: 0,
+                numberOfWomen: 0,
+                numberOfSlaves: 0,
+                buildings: [],
+            },
+            resources: {
+                id: 0,
+                owner: 0,
+                food: 0,
+                iron: 0,
+                timber: 0,
+                stone: 0,
+                gold: 0,
+                influence: 0,
+            },
         }
     };
+
+    public async componentDidMount(){
+        const player = (await ServerDataProvider.getPlayerData(1)).data;
+        this.setState({ player })
+    }
 
     public render() {
         return (
@@ -31,7 +55,7 @@ class App extends React.Component {
                 <Navbar />
                 <div className="row">
                     <div className="side-bar">
-                        <StatusPane {...this.state.resources} />
+                        <StatusPane {...this.state.player.resources} />
                     </div>
                     <div className="col-12 main">
                         <Switch>
