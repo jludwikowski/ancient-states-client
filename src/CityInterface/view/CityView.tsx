@@ -1,15 +1,8 @@
 import React from 'react'
-import { defaultBuildingList } from '../../BackEndMock/buildings'
-import Building from '../../Models/Building';
+import City from "../../Models/City";
 import { BuildingBrowser } from '../components/BuildingBrowser';
 
-export class CityView extends React.Component {
-
-    public buildingList: Building[] = defaultBuildingList;
-
-    public componentDidMount(): void {
-        console.log('On componentDidMount');
-    };
+export class CityView extends React.Component<City> {
 
     public onBuild(id:number) {
         console.log('On Build');
@@ -18,7 +11,7 @@ export class CityView extends React.Component {
     public render() {
         return(
             <>
-                <BuildingBrowser buildingList={this.buildingList} onBuild={this.onBuild} />
+                <BuildingBrowser buildingList={this.props.buildings} onBuild={this.onBuild} />
             </>
     )}
 }

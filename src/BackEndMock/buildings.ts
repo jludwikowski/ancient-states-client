@@ -4,45 +4,37 @@ export const defaultBuildingList:Building[] = [
     {
         id:1,
         name: 'barracks',
-        cost: 100,
-        buildingTime: 120,
+        baseCost: 100,
+        baseBuildingTime: 120,
         level: 1,
         imageUrl: '',
         description: 'You recruit standard units here',
-        finalBuildingTime: 140,
-        finalCost: 120
     },
     {
         id:2,
         name: 'forge',
-        cost: 250,
-        buildingTime: 150,
+        baseCost: 250,
+        baseBuildingTime: 150,
         level: 0,
         imageUrl: '',
         description: 'This building let you upgrade weapons',
-        finalCost: 250,
-        finalBuildingTime: 150
     },
     {
         id:3,
         name: 'field',
-        cost: 60,
-        buildingTime: 150,
+        baseCost: 60,
+        baseBuildingTime: 150,
         level: 1,
         imageUrl: '',
         description: 'This building produce food',
-        finalCost: 80,
-        finalBuildingTime: 150
     },
     {
         id:4,
         name: 'wall',
-        cost: 100,
-        buildingTime: 150,
+        baseCost: 100,
+        baseBuildingTime: 150,
         level: 0,
         imageUrl: '',
         description: 'Increase your defences',
-        finalCost: 100,
-        finalBuildingTime: 150
     }
 ]

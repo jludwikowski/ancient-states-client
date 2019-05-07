@@ -2,7 +2,6 @@ import React from 'react';
 import Resources from '../../Models/Resources';
 
 export const StatusPane: React.FunctionComponent<Resources> = (props) => {
-    console.log(props);
     return(
      <div className='sidebar-sticky'>
          <ul className='flex-column nav'>

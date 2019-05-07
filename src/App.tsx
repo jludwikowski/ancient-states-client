@@ -9,44 +9,22 @@ import {BattleReportsView} from "./BattleReportInterface/view/BattleReportsView"
 import {CityView} from './CityInterface/view/CityView';
 import {LeadersView} from './LeadersInterface/view/LeadersView';
 import Player from './Models/Player';
+import UnitPrototype from "./Models/UnitPrototype";
 import ServerDataProvider from './Services/ServerDataProvider';
 
-interface State { player: Player };
+interface State {
+    player: Player,
+    baseUnits: UnitPrototype[],
+};
 
-class App extends React.Component {
-
-    public state:State = {
-        player: {
-            id: 0,
-            email: 'none',
-            armies: [],
-            name: '',
-            description: '',
-            city: {
-                id: 0,
-                name: 'Capital',
-                description: '',
-                numberOfMen: 0,
-                numberOfWomen: 0,
-                numberOfSlaves: 0,
-                buildings: [],
-            },
-            resources: {
-                id: 0,
-                owner: 0,
-                food: 0,
-                iron: 0,
-                timber: 0,
-                stone: 0,
-                gold: 0,
-                influence: 0,
-            },
-        }
-    };
+class App extends React.Component<{},State> {
 
     public async componentDidMount(){
-        const player = (await ServerDataProvider.getPlayerData(1)).data;
-        this.setState({ player })
+        const [player, baseUnits] = await Promise.all([
+            await ServerDataProvider.getPlayerData(1),
+            await ServerDataProvider.getBaseUnits(),
+        ]);
+        this.setState({ player, baseUnits})
     }
 
     public render() {
@@ -55,14 +33,21 @@ class App extends React.Component {
                 <Navbar />
                 <div className="row">
                     <div className="side-bar">
-                        <StatusPane {...this.state.player.resources} />
+                        { this.state && this.state.player ? <StatusPane {...this.state.player.resources} /> : null }
                     </div>
                     <div className="col-12 main">
                         <Switch>
                             <Redirect path='/' exact={true} to='/cityView' />
 
-                            <Route path='/cityView' exact={true} component={CityView} />
-                            <Route path='/armiesView' exact={true} component={ArmiesView} />
+                            <Route path='/cityView' exact={true} render={() => {
+                                return this.state && this.state.player ? <CityView {...this.state.player.city} /> : null
+                            } }
+                            />
+                            <Route path='/armiesView' exact={true} render={() => {
+                                return this.state && this.state.player ? <ArmiesView armies={this.state.player.armies}
+                                baseUnits={this.state.baseUnits} /> : null
+                            } }
+                            />
                             <Route path='/leadersView' exact={true} component={LeadersView} />
                             <Route path='/battleReports' exact={true} component={BattleReportsView} />
 
