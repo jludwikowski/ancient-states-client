@@ -1,7 +1,7 @@
 import {Entity} from './Entity';
 import {UnitType} from './UnitType';
 
-export default interface Unit extends Entity {
+export default interface UnitPrototype extends Entity {
     trainTime: number,
     damage: number,
     activeTurns: number[],

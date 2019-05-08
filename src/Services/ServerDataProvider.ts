@@ -20,6 +20,7 @@ export default class ServerDataProvider {
                     return Promise.reject(Error(error.message));
                 })).data,
             (await this.getBaseBuildings()).data,
+            (await this.getPlayerArmies(id)).data,
             ]);
         /* Bulding conversiuon to client model */
         rawPlayerData.city.buildings = this.convertCityDataToBuildingList(baseBuildingData,
@@ -27,11 +28,25 @@ export default class ServerDataProvider {
                 rawPlayerData.city.forgeLevel,
                 rawPlayerData.city.fieldsLevel,
                 rawPlayerData.city.wallLevel]);
+        /* Fetch Armies */
+        rawPlayerData.armies = playerArmies;
         return rawPlayerData;
     };
 
     public static async getBaseBuildings() {
         return axios.get<BuildingPrototype[]>(`${config.api_url}get/BaseBuildings`, {
+        })
+            .catch((error: AxiosError) => {
+                // Handle errors
+                return Promise.reject(Error(error.message));
+            });
+    };
+
+    public static async getPlayerArmies(id: number) {
+        return axios.get<Army[]>(`${config.api_url}get/PlayerArmies`, {
+            params: {
+                id,
+            }
         })
             .catch((error: AxiosError) => {
                 // Handle errors
@@ -45,6 +60,15 @@ export default class ServerDataProvider {
             resultBuildingList[index]={...buildingPrototype, level: buildingLevelList[index]};
         })
         return resultBuildingList
+    };
+
+    public static async getBaseUnits() {
+        return (await axios.get<UnitPrototype[]>(`${config.api_url}get/BaseUnits`, {
+        })
+            .catch((error: AxiosError) => {
+                // Handle errors
+                return Promise.reject(Error(error.message));
+            })).data;
     };
 
 }

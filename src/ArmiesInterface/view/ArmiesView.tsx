@@ -1,15 +1,14 @@
 import React from 'react';
-import {defaultArmies} from '../../BackEndMock/armies';
-import Army from '../../Models/Army';
-import {ArmyTable} from '../components/ArmiesTable';
+import Army from "../../Models/Army";
+import UnitPrototype from "../../Models/UnitPrototype";
+import {ArmyCard} from "../components/ArmyCard";
 
-export class ArmiesView extends React.Component {
+interface Props {
+    armies: Army[],
+    baseUnits: UnitPrototype[]
+};
 
-    public armiesList: Army[] = defaultArmies;
-
-    public componentDidMount(): void {
-        console.log("On componentDidMount");
-    };
+export class ArmiesView extends React.Component<Props> {
 
     public onDisband(id:number) {
         console.log("On onDisband");
@@ -20,10 +19,21 @@ export class ArmiesView extends React.Component {
     };
 
     public render () {
-        return (
-            <>
-                <ArmyTable armiesList={this.armiesList} onCreate={this.onCreate} onDisband={this.onDisband}/>
-            </>
-        )
+        return <>
+            <div>
+                <ul className="list-group">
+                    {Object.values(this.props.armies).map((army) => (
+                        <React.Fragment key={army.id}>
+                            <ArmyCard army={army} onDisband={this.onDisband} baseUnits={this.props.baseUnits}/>
+                        </React.Fragment>
+                    ))}
+                </ul>
+                <div className="card">
+                    <button className='btn btn-outline-secondary' onClick={() => this.onCreate()}>
+                        Create new Army
+                    </button>
+                </div>
+            </div>
+        </>
     }
 }

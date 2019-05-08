@@ -11,7 +11,8 @@ export const ArmyTurnReport: React.FunctionComponent<Props> = props => (
         <span className="unit">
         {props.army.units.map((unit, index) => (
             <React.Fragment key={index}>
-                <div>UnitId: {unit.unitId}</div>
+                <div>UnitId: {unit.baseUnit}</div>
+                <div>Level: {unit.level}</div>
                 <div>Number: {unit.number}</div>
             </React.Fragment>
         ))}

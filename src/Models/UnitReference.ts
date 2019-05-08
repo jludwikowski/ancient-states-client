@@ -1,4 +1,5 @@
 export default interface UnitReference {
-    unitId: number,
-    number: number
+    baseUnit: number,
+    number: number,
+    level: number,
 }
