@@ -71,4 +71,13 @@ export default class ServerDataProvider {
             })).data;
     };
 
+    public static async getRules() {
+        return (await axios.get(`${config.api_url}get/Rules`, {
+        })
+            .catch((error: AxiosError) => {
+                // Handle errors
+                return Promise.reject(Error(error.message));
+            })).data;
+    };
+
 }
