@@ -1,21 +1,31 @@
 import React from 'react';
-import Army from "../../Models/Army";
-import UnitPrototype from "../../Models/UnitPrototype";
-import {ArmyCard} from "../components/ArmyCard";
+import Army from '../../Models/Army';
+import UnitPrototype from '../../Models/UnitPrototype';
+import {ArmyCard} from '../components/ArmyCard';
+import {ArmyCreationForm} from "../components/ArmyCreationForm";
 
 interface Props {
     armies: Army[],
     baseUnits: UnitPrototype[]
 };
 
-export class ArmiesView extends React.Component<Props> {
+interface State {
+    creatingArmy: boolean;
+}
 
-    public onDisband(id:number) {
-        console.log("On onDisband");
+export class ArmiesView extends React.Component<Props, State> {
+
+    constructor(props:Props) {
+        super(props);
+        this.state = { creatingArmy: false };
+    }
+
+    public onDisband(id:number | undefined) {
+        console.log('On onDisband');
     };
 
     public onCreate() {
-        console.log("On onCreate");
+        this.setState( {creatingArmy: true })
     };
 
     public render () {
@@ -24,7 +34,7 @@ export class ArmiesView extends React.Component<Props> {
                 <ul className="list-group">
                     {Object.values(this.props.armies).map((army) => (
                         <React.Fragment key={army.id}>
-                            <ArmyCard army={army} onDisband={this.onDisband} baseUnits={this.props.baseUnits}/>
+                            <ArmyCard army={army} onDisband={() => this.onDisband} baseUnits={this.props.baseUnits}/>
                         </React.Fragment>
                     ))}
                 </ul>
@@ -34,6 +44,10 @@ export class ArmiesView extends React.Component<Props> {
                     </button>
                 </div>
             </div>
+            {this.state.creatingArmy ? <ArmyCreationForm
+                owner={ this.props.armies[0].owner }
+                position={ this.props.armies[0].position } />
+                : null }
         </>
     }
 }

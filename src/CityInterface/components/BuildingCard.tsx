@@ -3,7 +3,7 @@ import Building from '../../Models/Building';
 
 type Props = {
     building: Building,
-    onBuild(id: number): void;
+    onBuild( id: number | undefined ): void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const BuildingCard: React.FunctionComponent<Props> = props => (

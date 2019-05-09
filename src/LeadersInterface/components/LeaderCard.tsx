@@ -3,7 +3,7 @@ import Leader from '../../Models/Leader';
 
 type Props = {
     leader: Leader,
-    onDismiss(id: number): void;
+    onDismiss( id: number | undefined ): void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const LeaderCard: React.FunctionComponent<Props> = props => (

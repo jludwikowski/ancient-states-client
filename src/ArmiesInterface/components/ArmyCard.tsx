@@ -5,7 +5,7 @@ import UnitPrototype from "../../Models/UnitPrototype";
 interface Props {
     army: Army,
     baseUnits: UnitPrototype[],
-    onDisband(id: number): void,
+    onDisband( id: number | undefined ): void,
 }
 
 export const ArmyCard: React.FunctionComponent<Props> = props => (

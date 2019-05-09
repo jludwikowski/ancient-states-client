@@ -6,6 +6,8 @@ export const defaultArmies:Army[] = [
         name: 'garrison',
         description: 'These men defend your lands',
         commander: null,
+        owner: 1,
+        position: '0,0',
         units: [{
                 baseUnit: 1,
                 level: 1,
