@@ -20,11 +20,11 @@ export class ArmiesView extends React.Component<Props, State> {
         this.state = { creatingArmy: false };
     }
 
-    public onDisband(id:number | undefined) {
+    public onDisband = (id:number | undefined) => {
         console.log('On onDisband');
     };
 
-    public onCreate() {
+    public onCreate = () => {
         this.setState( {creatingArmy: true })
     };
 
@@ -34,19 +34,17 @@ export class ArmiesView extends React.Component<Props, State> {
                 <ul className="list-group">
                     {Object.values(this.props.armies).map((army) => (
                         <React.Fragment key={army.id}>
-                            <ArmyCard army={army} onDisband={() => this.onDisband} baseUnits={this.props.baseUnits}/>
+                            <ArmyCard army={army} onDisband={this.onDisband} baseUnits={this.props.baseUnits}/>
                         </React.Fragment>
                     ))}
                 </ul>
                 <div className="card">
-                    <button className='btn btn-outline-secondary' onClick={() => this.onCreate()}>
+                    <button className='btn btn-outline-secondary' onClick={this.onCreate}>
                         Create new Army
                     </button>
                 </div>
             </div>
-            {this.state.creatingArmy ? <ArmyCreationForm
-                owner={ this.props.armies[0].owner }
-                position={ this.props.armies[0].position } />
+            {this.state.creatingArmy ? <ArmyCreationForm army={this.props.armies[0]} unitPrototypes={this.props.baseUnits} />
                 : null }
         </>
     }

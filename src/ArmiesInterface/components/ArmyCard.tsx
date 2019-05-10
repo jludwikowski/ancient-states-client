@@ -24,4 +24,4 @@ export const ArmyCard: React.FunctionComponent<Props> = props => (
             Disband this army
         </button>
     </li>
-)
+);
