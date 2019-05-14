@@ -40,7 +40,7 @@ export class ArmyCreationForm extends React.Component<Props, Army> {
     };
 
     private onCreate = () => {
-        ServerMessageDispatcher.sendCreateArmy(this.state);
+        ServerMessageDispatcher.sendCreateArmy(this.state, this.props.army.owner);
     };
 
     private handleChange = (event:React.ChangeEvent<HTMLInputElement>) =>  {

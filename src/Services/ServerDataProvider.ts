@@ -10,11 +10,7 @@ export default class ServerDataProvider {
 
     public static async getPlayerData(id: number) {
         const [rawPlayerData, baseBuildingData, playerArmies] = await Promise.all([
-            (await axios.get<Player>(`${config.api_url}get/Player`, {
-                params: {
-                    id,
-                }
-            })
+            (await axios.get<Player>(`${config.api_url}players/${id}`)
                 .catch((error: AxiosError) => {
                     // Handle errors
                     return Promise.reject(Error(error.message));
@@ -34,7 +30,7 @@ export default class ServerDataProvider {
     };
 
     public static async getBaseBuildings() {
-        return axios.get<BuildingPrototype[]>(`${config.api_url}get/BaseBuildings`, {
+        return axios.get<BuildingPrototype[]>(`${config.api_url}base-entities/buildings`, {
         })
             .catch((error: AxiosError) => {
                 // Handle errors
@@ -43,11 +39,7 @@ export default class ServerDataProvider {
     };
 
     public static async getPlayerArmies(id: number) {
-        return axios.get<Army[]>(`${config.api_url}get/PlayerArmies`, {
-            params: {
-                id,
-            }
-        })
+        return axios.get<Army[]>(`${config.api_url}players/${id}/armies`)
             .catch((error: AxiosError) => {
                 // Handle errors
                 return Promise.reject(Error(error.message));
@@ -63,7 +55,7 @@ export default class ServerDataProvider {
     };
 
     public static async getBaseUnits() {
-        return (await axios.get<UnitPrototype[]>(`${config.api_url}get/BaseUnits`, {
+        return (await axios.get<UnitPrototype[]>(`${config.api_url}base-entities/units`, {
         })
             .catch((error: AxiosError) => {
                 // Handle errors
@@ -72,7 +64,7 @@ export default class ServerDataProvider {
     };
 
     public static async getRules() {
-        return (await axios.get(`${config.api_url}get/Rules`, {
+        return (await axios.get(`${config.api_url}base-entities/rules`, {
         })
             .catch((error: AxiosError) => {
                 // Handle errors
