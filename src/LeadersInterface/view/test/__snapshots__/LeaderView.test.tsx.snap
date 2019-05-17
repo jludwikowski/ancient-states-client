@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeadersView Should match snapshot 1`] = `
+<Fragment>
+  <LeadersList
+    leadersList={Array []}
+    onDismiss={[Function]}
+  />
+</Fragment>
+`;

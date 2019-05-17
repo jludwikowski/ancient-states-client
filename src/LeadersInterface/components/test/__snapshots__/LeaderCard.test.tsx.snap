@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeaderCard Should match snapshot 1`] = `
+<div
+  leader={
+    Object {
+      "cunning": 100,
+      "description": "All fall for Alcibiades",
+      "imageUrl": "",
+      "leadership": 100,
+      "name": "Alcibiades",
+      "willpower": 0,
+      "wisdom": 0,
+    }
+  }
+  onDismiss={[Function]}
+>
+  <img
+    src=""
+  />
+  <div>
+    Alcibiades
+  </div>
+  <div>
+    100
+  </div>
+  <div>
+    100
+  </div>
+  <div>
+    0
+  </div>
+  <div>
+    0
+  </div>
+  <button
+    className="btn btn-outline-secondary"
+    onClick={[Function]}
+  >
+    Dismiss This Leader
+  </button>
+</div>
+`;

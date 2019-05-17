@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BattleReportsView Should match snapshot 1`] = `
+<Fragment>
+  <p>
+    No new battle reports
+  </p>
+</Fragment>
+`;

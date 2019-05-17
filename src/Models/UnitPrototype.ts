@@ -2,10 +2,11 @@ import {Entity} from './Entity';
 import {UnitType} from './UnitType';
 
 export default interface UnitPrototype extends Entity {
-    trainTime: number,
-    damage: number,
+    baseTrainTime: number,
+    baseDamage: number,
     activeTurns: number[],
-    health: number,
+    baseHealth: number,
+    baseCost: number,
     type: UnitType,
     imageUrl: string
 }

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnitAssignmentForm Should match snapshot 1`] = `
+<div
+  className="input-group mb-3"
+>
+  <SingleUnitForm
+    getUnit={[Function]}
+    key="0"
+    unit={
+      Object {
+        "baseUnit": 1,
+        "level": 1,
+        "number": 9802,
+      }
+    }
+    unitPrototypes={
+      Array [
+        Object {
+          "activeTurns": Array [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+          ],
+          "baseCost": 40,
+          "baseDamage": 8,
+          "baseHealth": 30,
+          "baseTrainTime": 50,
+          "description": "Poorly armed and armor eastern warrior",
+          "id": 1,
+          "imageUrl": "images/icons/icons8-military-base-100.png",
+          "name": "Persian Spearman",
+          "type": "Melee",
+        },
+      ]
+    }
+  />
+</div>
+`;

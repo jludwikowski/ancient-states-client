@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeadersList Should match snapshot 1`] = `
+<div
+  className="card-group"
+>
+  <LeaderCard
+    leader={
+      Object {
+        "cunning": 100,
+        "description": "All fall for Alcibiades",
+        "imageUrl": "",
+        "leadership": 100,
+        "name": "Alcibiades",
+        "willpower": 0,
+        "wisdom": 0,
+      }
+    }
+    onDismiss={[Function]}
+  />
+</div>
+`;

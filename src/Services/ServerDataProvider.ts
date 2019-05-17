@@ -50,7 +50,7 @@ export default class ServerDataProvider {
         const resultBuildingList:Building[] = [];
         baseBuildings.forEach((buildingPrototype,index) => {
             resultBuildingList[index]={...buildingPrototype, level: buildingLevelList[index]};
-        })
+        });
         return resultBuildingList
     };
 

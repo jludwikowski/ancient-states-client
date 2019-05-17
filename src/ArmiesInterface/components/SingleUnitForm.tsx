@@ -10,7 +10,7 @@ interface Props {
 
 export const SingleUnitForm: React.FunctionComponent<Props> = props => (
     <div>
-        <div>Unit Name: {props.unitPrototypes[props.unit.baseUnit].name}</div>
+        <div>Unit Name: {props.unitPrototypes[props.unit.baseUnit-1].name}</div>
         <div>Level: {props.unit.level}</div>
         <div>Number of troops to take: {props.unit.number}</div>
         <input data-base={props.unit.baseUnit}

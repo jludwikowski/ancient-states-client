@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArmyCard Should match snapshot 1`] = `
+<li
+  className="list-group-item"
+>
+  <div>
+    Name: 
+    New Army
+  </div>
+  <div>
+    Description: 
+  </div>
+  <div>
+    UnitName :
+    Persian Spearman
+  </div>
+  <div>
+    Level :
+    1
+  </div>
+  <div>
+    Number of troops: 
+    9802
+  </div>
+  <button
+    className="btn btn-outline-secondary"
+    onClick={[Function]}
+  >
+    Disband this army
+  </button>
+</li>
+`;

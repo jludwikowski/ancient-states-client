@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BattleTurn Should match snapshot 1`] = `
+<li
+  className="list-group-item"
+>
+  <ul
+    className="list-group"
+  >
+    <ArmyTurnReport
+      army={
+        Object {
+          "commander": null,
+          "description": "",
+          "id": 7,
+          "name": "New Army",
+          "orderDate": null,
+          "owner": 1,
+          "position": "0,0",
+          "status": "camp",
+          "targetId": null,
+          "units": Array [
+            Object {
+              "baseUnit": 1,
+              "level": 1,
+              "number": 9802,
+            },
+          ],
+        }
+      }
+    />
+    <ArmyTurnReport
+      army={
+        Object {
+          "commander": null,
+          "description": "",
+          "id": 1,
+          "name": "New Army",
+          "orderDate": null,
+          "owner": 2,
+          "position": "0,0",
+          "status": "camp",
+          "targetId": null,
+          "units": Array [
+            Object {
+              "baseUnit": 1,
+              "level": 1,
+              "number": 300,
+            },
+          ],
+        }
+      }
+    />
+  </ul>
+</li>
+`;

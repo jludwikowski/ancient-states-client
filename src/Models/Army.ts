@@ -7,4 +7,7 @@ export default interface Army extends Entity {
     units: UnitReference[]
     owner: number,
     position: string,
+    status: string,
+    orderDate?: string | null,
+    targetId?: number | null,
 }

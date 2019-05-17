@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should match snapshot 1`] = `
+<BrowserRouter>
+  <div
+    className="flex-container"
+  >
+    <Navbar />
+    <div
+      className="row"
+    >
+      <div
+        className="side-bar"
+      />
+      <div
+        className="col-12 main"
+      >
+        <Switch>
+          <Redirect
+            exact={true}
+            path="/"
+            to="/cityView"
+          />
+          <Route
+            exact={true}
+            path="/cityView"
+            render={[Function]}
+          />
+          <Route
+            exact={true}
+            path="/armiesView"
+            render={[Function]}
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/leadersView"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/battleReports"
+          />
+          <Route
+            component={[Function]}
+            path="*"
+          />
+        </Switch>
+      </div>
+    </div>
+  </div>
+</BrowserRouter>
+`;

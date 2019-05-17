@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArmyCreationForm Should match snapshot 1`] = `
+<div
+  className="input-group mb-3"
+>
+  <input
+    className="form-control"
+    name="name"
+    onChange={[Function]}
+    placeholder="New Army"
+    type="text"
+  />
+  <input
+    className="form-control"
+    name="description"
+    onChange={[Function]}
+    placeholder=""
+    type="text"
+  />
+  <UnitAssignmentForm
+    army={
+      Object {
+        "commander": null,
+        "description": "",
+        "id": 7,
+        "name": "New Army",
+        "orderDate": null,
+        "owner": 1,
+        "position": "0,0",
+        "status": "camp",
+        "targetId": null,
+        "units": Array [
+          Object {
+            "baseUnit": 1,
+            "level": 1,
+            "number": 9802,
+          },
+        ],
+      }
+    }
+    getUnit={[Function]}
+    unitPrototypes={
+      Array [
+        Object {
+          "activeTurns": Array [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+          ],
+          "baseCost": 40,
+          "baseDamage": 8,
+          "baseHealth": 30,
+          "baseTrainTime": 50,
+          "description": "Poorly armed and armor eastern warrior",
+          "id": 1,
+          "imageUrl": "images/icons/icons8-military-base-100.png",
+          "name": "Persian Spearman",
+          "type": "Melee",
+        },
+      ]
+    }
+  />
+  <div
+    className="input-group-append"
+  >
+    <button
+      className="btn btn-outline-secondary"
+      onClick={[Function]}
+    >
+      Create
+    </button>
+  </div>
+</div>
+`;

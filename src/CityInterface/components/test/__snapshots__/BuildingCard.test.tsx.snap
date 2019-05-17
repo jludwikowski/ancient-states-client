@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuildingCard Should match snapshot 1`] = `
+<div
+  className="card"
+>
+  <img
+    className="card-img-top"
+    src="images/icons/icons8-military-base-100.png"
+  />
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-title"
+    >
+      Name: 
+      barracks
+    </h5>
+    <div>
+      Level: 
+      10
+    </div>
+    <div>
+      Cost: 
+      100
+    </div>
+    <div>
+      Building time: 
+      120
+    </div>
+  </div>
+  <button
+    className="btn btn-outline-secondary"
+    onClick={[Function]}
+  >
+    Build level 
+    11
+  </button>
+</div>
+`;

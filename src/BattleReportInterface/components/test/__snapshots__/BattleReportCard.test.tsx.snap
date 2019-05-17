@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BattleReportCard Should match snapshot 1`] = `
+<div>
+  <ul
+    className="list-group"
+  >
+    <BattleTurn
+      armiesList={
+        Array [
+          Object {
+            "commander": null,
+            "description": "",
+            "id": 7,
+            "name": "New Army",
+            "orderDate": null,
+            "owner": 1,
+            "position": "0,0",
+            "status": "camp",
+            "targetId": null,
+            "units": Array [
+              Object {
+                "baseUnit": 1,
+                "level": 1,
+                "number": 9802,
+              },
+            ],
+          },
+        ]
+      }
+    />
+  </ul>
+  <button
+    className="btn btn-outline-secondary"
+    onClick={[Function]}
+  >
+    Disband this report
+  </button>
+</div>
+`;

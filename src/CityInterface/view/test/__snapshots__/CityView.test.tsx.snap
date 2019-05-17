@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CityView Should match snapshot 1`] = `
+<Fragment>
+  <BuildingBrowser
+    buildingList={
+      Array [
+        Object {
+          "baseBuildingTime": 120,
+          "baseCost": 100,
+          "description": "You recruit standard units here",
+          "id": 1,
+          "imageUrl": "images/icons/icons8-military-base-100.png",
+          "level": 10,
+          "name": "barracks",
+        },
+        Object {
+          "baseBuildingTime": 150,
+          "baseCost": 250,
+          "description": "This building let you upgrade weapons",
+          "id": 2,
+          "imageUrl": "images/icons/icons8-military-base-100.png",
+          "level": 10,
+          "name": "forge",
+        },
+        Object {
+          "baseBuildingTime": 150,
+          "baseCost": 60,
+          "description": "This building produce food",
+          "id": 3,
+          "imageUrl": "images/icons/icons8-military-base-100.png",
+          "level": 30,
+          "name": "fields",
+        },
+      ]
+    }
+    onBuild={[Function]}
+  />
+</Fragment>
+`;

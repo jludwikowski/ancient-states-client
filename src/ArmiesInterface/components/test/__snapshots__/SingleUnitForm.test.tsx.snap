@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleUnitForm Should match snapshot 1`] = `
+<div>
+  <div>
+    Unit Name: 
+    Persian Spearman
+  </div>
+  <div>
+    Level: 
+    1
+  </div>
+  <div>
+    Number of troops to take: 
+    9802
+  </div>
+  <input
+    className="form-control"
+    data-base={1}
+    data-level={1}
+    name="number"
+    onChange={[Function]}
+    placeholder="0"
+    type="number"
+  />
+</div>
+`;

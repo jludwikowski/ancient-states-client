@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import './App.css';
+import {BrowserRouter as Router} from "react-router-dom";
 import {ArmiesView} from './ArmiesInterface/view/ArmiesView';
 import {Navbar} from './BasicInterface/components/Navbar';
 import {Page404} from "./BasicInterface/components/Page404";
@@ -29,33 +30,35 @@ class App extends React.Component<{},State> {
 
     public render() {
         return (
-            <div className='flex-container'>
-                <Navbar />
-                <div className="row">
-                    <div className="side-bar">
-                        { this.state && this.state.player ? <StatusPane {...this.state.player.resources} /> : null }
-                    </div>
-                    <div className="col-12 main">
-                        <Switch>
-                            <Redirect path='/' exact={true} to='/cityView' />
+            <Router>
+                <div className='flex-container'>
+                    <Navbar />
+                    <div className="row">
+                        <div className="side-bar">
+                            { this.state && this.state.player ? <StatusPane {...this.state.player.resources} /> : null }
+                        </div>
+                        <div className="col-12 main">
+                            <Switch>
+                                <Redirect path='/' exact={true} to='/cityView' />
 
-                            <Route path='/cityView' exact={true} render={() => {
-                                return this.state && this.state.player ? <CityView {...this.state.player.city} /> : null
-                            } }
-                            />
-                            <Route path='/armiesView' exact={true} render={() => {
-                                return this.state && this.state.player ? <ArmiesView armies={this.state.player.armies}
-                                baseUnits={this.state.baseUnits} /> : null
-                            } }
-                            />
-                            <Route path='/leadersView' exact={true} component={LeadersView} />
-                            <Route path='/battleReports' exact={true} component={BattleReportsView} />
+                                <Route path='/cityView' exact={true} render={() => {
+                                    return this.state && this.state.player ? <CityView {...this.state.player.city} /> : null
+                                } }
+                                />
+                                <Route path='/armiesView' exact={true} render={() => {
+                                    return this.state && this.state.player ? <ArmiesView armies={this.state.player.armies}
+                                    baseUnits={this.state.baseUnits} /> : null
+                                } }
+                                />
+                                <Route path='/leadersView' exact={true} component={LeadersView} />
+                                <Route path='/battleReports' exact={true} component={BattleReportsView} />
 
-                            <Route path='*' component={Page404} />
-                        </Switch>
+                                <Route path='*' component={Page404} />
+                            </Switch>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Router>
         );
     }
 }

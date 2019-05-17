@@ -15,7 +15,7 @@ export const ArmyCard: React.FunctionComponent<Props> = props => (
         {props.army.units ? (
             Object.values(props.army.units).map((unit, index) => (
             <React.Fragment key={index}>
-                <div>UnitName :{props.baseUnits[unit.baseUnit].name}</div>
+                <div>UnitName :{props.baseUnits[unit.baseUnit-1].name}</div>
                 <div>Level :{unit.level}</div>
                 <div>Number of troops: {unit.number}</div>
             </React.Fragment>

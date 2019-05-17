@@ -1,7 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {BrowserRouter as Router, NavLink} from 'react-router-dom';
 
 export const Navbar: React.FunctionComponent = (props) => (
+    <Router>
     <nav className='navbar navbar-expand navbar-dark bg-dark mb-3'>
 
         <NavLink className='navbar-brand' to='/'>
@@ -34,4 +35,5 @@ export const Navbar: React.FunctionComponent = (props) => (
             </div>
         </div>
     </nav>
+    </Router>
 );

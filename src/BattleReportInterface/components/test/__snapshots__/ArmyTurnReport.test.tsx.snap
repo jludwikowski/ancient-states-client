@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArmyTurnReport Should match snapshot 1`] = `
+<li
+  className="list-group-item"
+>
+  <span>
+    New Army
+  </span>
+  <span
+    className="unit"
+  >
+    <div>
+      UnitId: 
+      1
+    </div>
+    <div>
+      Level: 
+      1
+    </div>
+    <div>
+      Number: 
+      9802
+    </div>
+  </span>
+</li>
+`;

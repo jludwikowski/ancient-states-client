@@ -17,6 +17,7 @@ export class ArmyCreationForm extends React.Component<Props, Army> {
         this.state = {
             name: 'New Army',
             description: '',
+            status: 'camp',
             owner: this.props.army.owner,
             position: this.props.army.position,
             commander: null,
